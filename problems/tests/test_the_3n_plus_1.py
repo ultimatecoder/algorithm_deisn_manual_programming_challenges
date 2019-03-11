@@ -65,7 +65,7 @@ class TestThe3nPlus1(unittest.TestCase):
             # (number, cycle-length)
             (1, 1),
             (2, 2),
-            (55,113),
+            (55, 113),
             (999999, 259)
         )
         for number, expected_cycle_length in number_and_expected_cycle_lengths:
