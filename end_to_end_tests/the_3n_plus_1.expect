@@ -1,0 +1,66 @@
+#!/usr/bin/expect
+
+set timeout -1
+
+set PROGRAM_PATH "problems/the_3n_plus_1.py"
+
+# Case -1
+# ================
+
+spawn python $PROGRAM_PATH
+
+set RANGE_START "1"
+set RANGE_END "10"
+set EXPECTED_OUTPUT "1 10 20"
+
+send -- "$RANGE_START $RANGE_END\n"
+
+expect "$EXPECTED_OUTPUT"
+
+expect eof
+
+# Case -2
+# ================
+
+spawn python $PROGRAM_PATH
+
+set RANGE_START "100"
+set RANGE_END "200"
+set EXPECTED_OUTPUT "100 200 125"
+
+send -- "$RANGE_START $RANGE_END\n"
+
+expect "$EXPECTED_OUTPUT"
+
+expect eof
+
+# Case -3
+# ====================
+
+set RANGE_START "201"
+set RANGE_END "210"
+set EXPECTED_OUTPUT "201 210 89"
+
+spawn python $PROGRAM_PATH
+
+send -- "$RANGE_START $RANGE_END\n"
+
+expect "$EXPECTED_OUTPUT"
+
+expect eof
+
+# Case -4
+# =================
+
+set RANGE_START "900"
+set RANGE_END "1000"
+set EXPECTED_OUTPUT "174"
+
+spawn python $PROGRAM_PATH
+
+send -- "$RANGE_START $RANGE_END\n"
+
+expect "$EXPECTED_OUTPUT"
+
+expect eof
+
