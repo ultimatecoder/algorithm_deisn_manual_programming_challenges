@@ -1,0 +1,44 @@
+#!/usr/bin/expect
+
+set PROGRAM_PATH "problems/the_trip.py"
+
+spawn python $PROGRAM_PATH
+
+# Case -1
+# ==========
+
+set NUMBER_OF_STUDENTS "3"
+set AMOUNT_SPENT_BY_STUDENT_1 "10.00"
+set AMOUNT_SPENT_BY_STUDENT_2 "20.00"
+set AMOUNT_SPENT_BY_STUDENT_3 "30.00"
+set EXCHANGE_CASE_1 "\$10.00"
+
+send -- "$NUMBER_OF_STUDENTS\n"
+send -- "$AMOUNT_SPENT_BY_STUDENT_1\n"
+send -- "$AMOUNT_SPENT_BY_STUDENT_2\n"
+send -- "$AMOUNT_SPENT_BY_STUDENT_3\n"
+
+
+# Case -2
+# ============
+
+set NUMBER_OF_STUDENTS "4"
+set AMOUNT_SPENT_BY_STUDENT_1 "15.00"
+set AMOUNT_SPENT_BY_STUDENT_2 "15.01"
+set AMOUNT_SPENT_BY_STUDENT_3 "3.00"
+set AMOUNT_SPENT_BY_STUDENT_4 "3.01"
+set EXCHANGE_CASE_2 "\$11.99"
+
+send -- "$NUMBER_OF_STUDENTS\n"
+send -- "$AMOUNT_SPENT_BY_STUDENT_1\n"
+send -- "$AMOUNT_SPENT_BY_STUDENT_2\n"
+send -- "$AMOUNT_SPENT_BY_STUDENT_3\n"
+send -- "$AMOUNT_SPENT_BY_STUDENT_4\n"
+
+# End
+
+send -- "0\n"
+
+expect "$EXCHANGE_CASE_1\n"
+expect "$EXCHANGE_CASE_2\n"
+expect eof

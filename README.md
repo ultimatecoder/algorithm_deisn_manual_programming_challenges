@@ -16,5 +16,22 @@ try to solve those quoted exercises by my own.
 
 * You can find the solutions in C or Python.
 
+## Dependency
+
+### End to end tests
+
+* [Expect][expect]
+* [Garud][garud]
+
+
+## Commands
+
+```make end-to-end-test```
+
+This command fires end to end tests for all the programs. Make sure dependecies
+for end to end tests are installed.
+
 [algorithm_design_manual]: https://www.goodreads.com/book/show/425208.The_Algorithm_Design_Manual
 [programming_challenges]: https://www.goodreads.com/book/show/1041695.Programming_Challenges
+[expect]: https://core.tcl.tk/expect/index
+[garud]: https://gist.github.com/ultimatecoder/801177083c722884d8e6ff76bb342c8d
